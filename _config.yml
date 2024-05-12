@@ -1,0 +1,69 @@
+url: "https://mrinalcs.github.io/new" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "/new" # the subpath of your site, e.g. /blog
+title: "Mrinal Chandra Sarkar" # the name of your site, e.g. ACME Corp.
+author:
+  name: Mrinal Chandra Sarkar
+  url: https://mrinalcs.github.io
+
+
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-redirect-from 
+  - jekyll-minifier
+  - jekyll-remote-theme
+
+remote_theme: mrinalcs/portraze
+
+font: serifs # 'sans-serif' or 'serifs'
+color-scheme: auto # 'auto' 'dark' 'light'
+
+nav:
+  - title: About
+    url: /
+  - title: Post
+    url: /post
+   
+
+footer:
+ enable: true # default true
+ text: Copyright &copy; Mrinal
+
+
+social:
+  - title: Twitter
+    url: https://twitter.com/example
+  - title: Facebook
+    url: https://facebook.com/example
+  - title: Instagram
+    url: https://instagram.com/example
+
+
+
+permalink: /:title
+
+collections:
+  pages:
+    output: true
+    permalink: /:title
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      render_with_liquid: false
+      toc: true
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
+      seo:
+        type: WebPage
+        
+exclude:
+  - README.md
+  - LICENSE
