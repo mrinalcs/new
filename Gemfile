@@ -11,3 +11,7 @@ group :jekyll_plugins do
   gem 'jekyll-minifier'
   gem 'jekyll-remote-theme'
 end
+
+if Gem.win_platform?
+    gem 'wdm', '>= 0.1.0'
+  end
